@@ -1,0 +1,39 @@
+{
+  "name": "@tailored/sidebar",
+  "description": "Sidebar component",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.0",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-export-extensions",
+      "transform-runtime",
+      "transform-react-jsx"
+    ]
+  },
+  "scripts": {
+    "build": "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "lint": "eslint src/",
+    "lint-fix": "eslint src/ --fix",
+    "clean": "rm dist/main.js",
+    "build-clean": "npm run lint-fix && npm run clean && npm run build"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0",
+    "styled-components": "^3.2.5"
+  }
+}

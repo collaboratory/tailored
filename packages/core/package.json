@@ -1,0 +1,61 @@
+{
+  "name": "@tailored/client",
+  "description": "The craft client package",
+  "authors": "Andrew Ewing <drew@collaboratory.io>",
+  "version": "0.0.0",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-export-extensions",
+      "transform-runtime",
+      "transform-react-jsx"
+    ]
+  },
+  "scripts": {
+    "post-build": "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "lint": "eslint src/",
+    "lint-fix": "eslint src/ --fix",
+    "clean": "rm dist/main.js",
+    "build-clean": "npm run lint-fix && npm run clean && npm run build"
+  },
+  "peerDependencies": {
+    "@tailored/button": "0.0.0",
+    "@tailored/datatable": "0.0.0",
+    "@tailored/emitter": "0.0.0",
+    "@tailored/form": "0.0.0",
+    "@tailored/grid": "0.0.0",
+    "@tailored/indicator": "0.0.0",
+    "@tailored/message": "0.0.0",
+    "@tailored/observable": "0.0.0",
+    "@tailored/page": "0.0.0",
+    "@tailored/paginator": "0.0.0",
+    "@tailored/panel": "0.0.0",
+    "@tailored/queue": "0.0.0",
+    "@tailored/service": "0.0.0",
+    "@tailored/sidebar": "0.0.0",
+    "@tailored/socket": "0.0.0",
+    "@tailored/table": "0.0.0",
+    "@tailored/service-analytics": "0.0.0",
+    "@tailored/service-auth": "0.0.0",
+    "@tailored/service-emitter": "0.0.0",
+    "@tailored/service-storage": "0.0.0",
+    "@tailored/theme-default": "0.0.0",
+    "@tailored/util": "0.0.0",
+    "react": "^16.2.0",
+    "styled-components": "^3.2.5"
+  }
+}
