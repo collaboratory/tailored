@@ -15,6 +15,7 @@ const InputField = ({
   labelProps = {},
   labelWidth = 1 / 2,
   inputWidth = 1 / 2,
+  onChange = null,
   ...fieldProps
 }) => {
   return (
@@ -25,13 +26,21 @@ const InputField = ({
         </Label>
       </Box>
       <Box width={inputWidth}>
-        <Input width={1} type={type} value={value} name={name} {...inputProps} />
+        <Input
+          width={1}
+          type={type}
+          value={value}
+          name={name}
+          onChange={onChange}
+          {...inputProps}
+        />
       </Box>
     </Field>
   );
 };
 
 InputField.propTypes = {
+  onChange: PropTypes.func,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.any,
