@@ -7,6 +7,6 @@ const Table = styled.table`
   margin: 0;
   padding: 0;
   word-break: break-word;
-  ${overrides};
+  ${overrides()};
 `;
 export default Table;

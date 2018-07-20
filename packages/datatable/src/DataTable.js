@@ -50,7 +50,6 @@ export class DataTableComponent extends Component {
     endpoint: PropTypes.string.isRequired,
     hasPagination: PropTypes.bool,
     prepareRequest: PropTypes.func,
-    requireAuth: PropTypes.bool,
     onRecordClick: PropTypes.func,
     onResponseState: PropTypes.func,
     responseMap: PropTypes.object,
@@ -73,8 +72,8 @@ export class DataTableComponent extends Component {
     this.checkInterval();
   }
 
-  componentWillReceiveProps(props) {
-    this.checkInterval(props);
+  componentDidUpdate() {
+    this.checkInterval();
   }
 
   componentWillUnmount() {
@@ -202,7 +201,7 @@ export class DataTableComponent extends Component {
               cellPadding={8}
               cellSpacing={0}
               border={1}
-              width="100%"
+              width={1}
             >
               <THead>
                 <Row key={uniqid()}>
@@ -211,7 +210,9 @@ export class DataTableComponent extends Component {
                       <HCol
                         key={uniqid()}
                         width={col.width || "auto"}
-                        onClick={e => this.sortToggle(col.field)}
+                        onClick={e =>
+                          !!col.sortable && this.sortToggle(col.field)
+                        }
                       >
                         {col.label}
                       </HCol>

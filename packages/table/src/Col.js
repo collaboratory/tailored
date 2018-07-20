@@ -13,6 +13,6 @@ const Col = styled.td`
   &:last-child {
     word-wrap: break-word;
   }
-  ${overrides};
+  ${overrides()};
 `;
 export default Col;

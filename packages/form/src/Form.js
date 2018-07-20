@@ -3,6 +3,6 @@ import { overrides } from "@tailored/util";
 
 const Form = styled.form`
   text-align: center;
-  ${overrides};
+  ${overrides()};
 `;
 export default Form;

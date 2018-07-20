@@ -5,6 +5,6 @@ const Footer = styled.div`
   margin-top: 10px;
   line-height: 42px;
   width: 100%;
-  ${overrides};
+  ${overrides()};
 `;
 export default Footer;

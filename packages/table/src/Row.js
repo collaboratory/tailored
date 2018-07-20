@@ -4,6 +4,6 @@ import { overrides } from "@tailored/util";
 const Row = styled.tr`
   cursor: pointer;
   background: ${props => (props.tinted ? "#ececec" : "#fff")};
-  ${overrides};
+  ${overrides()};
 `;
 export default Row;

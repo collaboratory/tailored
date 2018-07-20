@@ -109,8 +109,12 @@ export const hoverColors = (amount = 0.2) => {
     const borderBase = convertColor(borderColor || "primary-d-1", theme.colors);
     const hoverFn = (color, amount, foreground = false) => {
       const fn = foreground
-        ? inverted ? darken : lighten
-        : inverted ? lighten : darken;
+        ? inverted
+          ? darken
+          : lighten
+        : inverted
+          ? lighten
+          : darken;
       return fn(amount, color);
     };
     return disabled
@@ -146,16 +150,25 @@ export const customWidth = ({ fullWidth, ...next }) =>
       `
     : width(next);
 
-export const overrides = css`
-  ${space};
-  ${customWidth};
-  ${height};
-  ${colors};
-  ${fontSize};
-  ${borderRadius};
-  ${disabled};
-  ${lineHeight};
-  ${textAlign};
-  ${float};
-`;
+export const overrides = (defaultProps = {}) => {
+  return css`
+    ${props =>
+      [
+        space,
+        customWidth,
+        height,
+        colors,
+        fontSize,
+        borderRadius,
+        lineHeight,
+        textAlign,
+        float
+      ].map((fn, i) => {
+        return fn({
+          ...defaultProps,
+          ...props
+        });
+      })};
+  `;
+};
 export default overrides;
