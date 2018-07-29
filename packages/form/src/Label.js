@@ -10,6 +10,6 @@ const Label = styled.label`
   text-align: right;
   transition: color 1s;
   font-size: 18px;
-  ${overrides};
+  ${overrides()};
 `;
 export default Label;

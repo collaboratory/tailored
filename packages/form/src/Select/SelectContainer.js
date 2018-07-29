@@ -26,6 +26,6 @@ const SelectContainer = styled.div`
       ${props => props.theme.colors[props.outline || "primary"]};
   }
 
-  ${overrides};
+  ${overrides()};
 `;
 export default SelectContainer;

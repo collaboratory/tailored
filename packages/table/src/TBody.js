@@ -7,6 +7,6 @@ const TBody = styled.tbody`
   ${Row}:hover {
     background: #eee;
   }
-  ${overrides};
+  ${overrides()};
 `;
 export default TBody;

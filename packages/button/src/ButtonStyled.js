@@ -18,6 +18,9 @@ export const ButtonStyled = styled.button`
   ${display};
   ${float};
   ${hoverColors()};
-  ${overrides};
+  ${overrides({
+    bg: "primary",
+    color: "light"
+  })};
 `;
 export default withTheme(ButtonStyled);

@@ -19,6 +19,6 @@ const Input = styled.input`
     outline: none;
   }
 
-  ${overrides};
+  ${overrides()};
 `;
 export default Input;

@@ -14,6 +14,6 @@ const Field = styled.div`
     }
   }
 
-  ${overrides};
+  ${overrides()};
 `;
 export default Field;
