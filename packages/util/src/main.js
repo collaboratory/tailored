@@ -150,6 +150,13 @@ export const customWidth = ({ fullWidth, ...next }) =>
       `
     : width(next);
 
+export const verticalAlign = ({ verticalAlign, ...next }) =>
+  verticalAlign
+    ? css`
+        vertical-align: ${verticalAlign};
+      `
+    : null;
+
 export const overrides = (defaultProps = {}) => {
   return css`
     ${props =>
@@ -162,7 +169,8 @@ export const overrides = (defaultProps = {}) => {
         borderRadius,
         lineHeight,
         textAlign,
-        float
+        float,
+        verticalAlign
       ].map((fn, i) => {
         return fn({
           ...defaultProps,
