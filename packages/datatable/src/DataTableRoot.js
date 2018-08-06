@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 const DataTableRoot = styled.div`
-  height: calc(100% - 20px);
-  width: calc(100% - 20px);
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 `;
 export default DataTableRoot;

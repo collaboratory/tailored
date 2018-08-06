@@ -27,7 +27,7 @@ const InputField = ({
       </Box>
       <Box width={inputWidth}>
         <Input
-          width={1}
+          width="100%"
           type={type}
           value={value}
           name={name}

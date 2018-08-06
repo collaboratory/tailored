@@ -201,7 +201,7 @@ export class DataTableComponent extends Component {
               cellPadding={8}
               cellSpacing={0}
               border={1}
-              width={1}
+              width="100%"
             >
               <THead>
                 <Row key={uniqid()}>
@@ -256,17 +256,17 @@ export class DataTableComponent extends Component {
                 </TBody>
               )}
             </Table>
-            {this.props.hasPagination && (
-              <DataTableFooter>
-                <Paginator
-                  onPageChange={this.onPageChange}
-                  page={this.state.page}
-                  pages={this.state.pageCount}
-                />
-              </DataTableFooter>
-            )}
           </DataTableContent>
         </DataTableContainer>
+        {this.props.hasPagination && (
+          <DataTableFooter>
+            <Paginator
+              onPageChange={this.onPageChange}
+              page={this.state.page}
+              pages={this.state.pageCount}
+            />
+          </DataTableFooter>
+        )}
       </DataTableRoot>
     );
   }
