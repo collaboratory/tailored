@@ -3,8 +3,9 @@ import { overrides } from "@tailored/util";
 const HCol = Col.extend`
   font-weight: bold;
   ${overrides({
-    bg: "primary-d-2",
-    color: "white"
+    bg: "disabled-d-7",
+    borderColor: "disabled-d-5",
+    color: "light"
   })};
 `;
 export default HCol;

@@ -27,6 +27,7 @@
   },
   "scripts": {
     "build": "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
+    "watch": "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__' --watch",
     "lint": "eslint src/",
     "lint-fix": "eslint src/ --fix",
     "clean": "rm dist/main.js",

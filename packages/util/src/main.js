@@ -68,8 +68,8 @@ export const colors = ({
       border = convertColor("disabled-d-2", theme.colors);
     } else {
       background = convertColor("light", theme.colors);
-      foreground = convertColor("dark", theme.colors);
-      border = convertColor("dark", theme.colors);
+      foreground = convertColor("disabled", theme.colors);
+      border = convertColor("disabled", theme.colors);
     }
     extra += css`
       cursor: not-allowed;
