@@ -12,19 +12,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "babel": {
-    "presets": [
-      "env",
-      "react"
-    ],
-    "plugins": [
-      "transform-class-properties",
-      "transform-object-rest-spread",
-      "transform-export-extensions",
-      "transform-runtime",
-      "transform-react-jsx"
-    ]
-  },
   "scripts": {
     "build": "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
     "watch": "babel --watch -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
@@ -35,10 +22,10 @@
   },
   "dependencies": {
     "@tailored/util": "^0.0.0",
-    "@emitterware/emitter": "^0.0.0"
+    "@emitterware/emitter": "^0.0.1"
   },
   "peerDependencies": {
-    "react": "^16.2.0",
-    "styled-components": "^3.2.5"
+    "react": "^16.8.6",
+    "styled-components": "^4.2.0"
   }
 }

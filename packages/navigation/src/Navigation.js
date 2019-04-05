@@ -13,9 +13,9 @@ export class Navigation extends Component {
   };
 
   render() {
-    const { bg = "blue", ...next } = this.props;
+    const { bg = "primary-d-4", color = "white", ...next } = this.props;
     return (
-      <Box bg={bg} {...next}>
+      <Box bg={bg} color={color} {...next}>
         {this.props.children}
         {this.state.proceduralItems}
       </Box>

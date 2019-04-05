@@ -1,12 +1,11 @@
 {
   "presets": [
-    "env",
-    "react"
+    "@babel/env",
+    "@babel/react"
   ],
   "plugins": [
-    "transform-object-rest-spread",
-    "transform-class-properties",
-    "dynamic-import-node"
+    "@babel/proposal-class-properties",
+    "@babel/transform-runtime"
   ],
   "ignore": [
     "**/*.test.js",

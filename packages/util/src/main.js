@@ -4,8 +4,8 @@ import {
   width,
   height,
   fontSize,
+  fontWeight,
   borderRadius,
-  disabled,
   textAlign,
   lineHeight
 } from "styled-system";
@@ -30,7 +30,7 @@ export function convertColor(entry, themeColors) {
   const color = parts.shift();
 
   let result;
-  if (themeColors.hasOwnProperty(color)) {
+  if (themeColors && themeColors.hasOwnProperty(color)) {
     result = `${themeColors[color]} ${parts.join(" ")}`;
   } else {
     result = `${color} ${parts.join(" ")}`;
@@ -166,6 +166,7 @@ export const overrides = (defaultProps = {}) => {
         height,
         colors,
         fontSize,
+        fontWeight,
         borderRadius,
         lineHeight,
         textAlign,

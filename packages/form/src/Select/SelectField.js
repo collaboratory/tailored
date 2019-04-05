@@ -29,14 +29,17 @@ export const SelectField = ({
       </Box>
     </Field>
   );
-}
+};
 
 SelectField.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   labelProps: PropTypes.object,
   fieldProps: PropTypes.object,
-  children: PropTypes.any
+  children: PropTypes.any,
+  onChange: PropTypes.func,
+  labelWidth: PropTypes.number,
+  selectWidth: PropTypes.number
 };
 
 export default SelectField;

@@ -1,4 +1,4 @@
-import { injectGlobal } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 const defaultFont = `"Operator Mono Lig", "Operator Mono", "Fira Code", "Menlo", sans-serif`;
@@ -9,7 +9,7 @@ const defaultFonts = {
 };
 
 function baseStyles(fonts = defaultFonts, fromCDN = false) {
-  return injectGlobal`
+  return createGlobalStyle`
     ${reset};
 
     html, body, #app {

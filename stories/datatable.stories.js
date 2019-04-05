@@ -1,25 +1,23 @@
 import React from "react";
 
-import { storiesOf, setAddon } from "@storybook/react";
-import { DataTable } from "../packages/datatable";
-import { ButtonAnchor } from "../packages/button";
+import { storiesOf } from "@storybook/react";
+import { DataTable } from "../packages/datatable/src/main";
+import { ButtonAnchor } from "../packages/button/src/main";
 import { Input } from "../packages/form";
 import {
   withKnobs,
   boolean,
   number,
-  selectV2 as select
-} from "@storybook/addon-knobs/react";
+  select
+} from "@storybook/addon-knobs";
 import { AppWrapper } from "./decorators";
-import JSXAddon from "storybook-addon-jsx";
-setAddon(JSXAddon);
 
 let filter = "";
 
 storiesOf("DataTable", module)
   .addDecorator(AppWrapper)
   .addDecorator(withKnobs)
-  .addWithJSX("standard configuration", () => (
+  .add("standard configuration", () => (
     <DataTable
       columns={[
         {
