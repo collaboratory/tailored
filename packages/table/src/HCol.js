@@ -1,10 +1,13 @@
-import Col from "./Col";
+import styled from "styled-components";
 import { overrides } from "@tailored/util";
-const HCol = Col.extend`
+import Col from "./Col";
+
+const HCol = styled(Col)`
   font-weight: bold;
   ${overrides({
-    bg: "primary-d-2",
-    color: "white"
+    bg: "disabled-d-7",
+    borderColor: "disabled-d-5",
+    color: "light"
   })};
 `;
 export default HCol;

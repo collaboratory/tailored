@@ -4,8 +4,8 @@ import {
   width,
   height,
   fontSize,
+  fontWeight,
   borderRadius,
-  disabled,
   textAlign,
   lineHeight
 } from "styled-system";
@@ -30,7 +30,7 @@ export function convertColor(entry, themeColors) {
   const color = parts.shift();
 
   let result;
-  if (themeColors.hasOwnProperty(color)) {
+  if (themeColors && themeColors.hasOwnProperty(color)) {
     result = `${themeColors[color]} ${parts.join(" ")}`;
   } else {
     result = `${color} ${parts.join(" ")}`;
@@ -68,8 +68,8 @@ export const colors = ({
       border = convertColor("disabled-d-2", theme.colors);
     } else {
       background = convertColor("light", theme.colors);
-      foreground = convertColor("dark", theme.colors);
-      border = convertColor("dark", theme.colors);
+      foreground = convertColor("disabled", theme.colors);
+      border = convertColor("disabled", theme.colors);
     }
     extra += css`
       cursor: not-allowed;
@@ -166,6 +166,7 @@ export const overrides = (defaultProps = {}) => {
         height,
         colors,
         fontSize,
+        fontWeight,
         borderRadius,
         lineHeight,
         textAlign,

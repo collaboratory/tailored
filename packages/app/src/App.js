@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { BrowserRouter, HashRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import baseStyles from "./BaseStyles";
+const Styles = baseStyles();
 
 export default class App extends Component {
   static propTypes = {
@@ -10,10 +11,6 @@ export default class App extends Component {
     theme: PropTypes.object.isRequired,
     children: PropTypes.any
   };
-
-  componentWillMount() {
-    baseStyles();
-  }
 
   render() {
     const { router, theme } = this.props;
@@ -28,6 +25,7 @@ export default class App extends Component {
 
     return (
       <AppRouter>
+        <Styles/>
         <ThemeProvider theme={theme}>{this.props.children}</ThemeProvider>
       </AppRouter>
     );

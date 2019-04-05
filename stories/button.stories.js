@@ -1,16 +1,14 @@
 import React from "react";
 
-import { storiesOf, setAddon } from "@storybook/react";
+import { storiesOf } from "@storybook/react";
 import { Button, ButtonLink, ButtonAnchor } from "../packages/button";
 import {
   withKnobs,
   boolean,
   number,
-  selectV2 as select
-} from "@storybook/addon-knobs/react";
+  select
+} from "@storybook/addon-knobs";
 import { AppWrapper } from "./decorators";
-import JSXAddon from "storybook-addon-jsx";
-setAddon(JSXAddon);
 
 const colors = {
   Primary: "primary",
@@ -31,7 +29,7 @@ const colors = {
 storiesOf("Button", module)
   .addDecorator(AppWrapper)
   .addDecorator(withKnobs)
-  .addWithJSX("standard button", () => (
+  .add("standard button", () => (
     <Button
       bg={select("Background Color", colors, "primary")}
       color={select("Foreground Color", colors, "white")}
@@ -45,7 +43,7 @@ storiesOf("Button", module)
       Standard Button
     </Button>
   ))
-  .addWithJSX("linked button", () => (
+  .add("linked button", () => (
     <ButtonLink
       to="/"
       bg={select("Background Color", colors, "primary")}
@@ -59,7 +57,7 @@ storiesOf("Button", module)
       Linked Button
     </ButtonLink>
   ))
-  .addWithJSX("anchor button", () => (
+  .add("anchor button", () => (
     <ButtonAnchor
       href="/"
       bg={select("Background Color", colors, "primary")}

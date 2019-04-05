@@ -1,19 +1,17 @@
 import React from "react";
 
-import { storiesOf, setAddon } from "@storybook/react";
-import { App } from "../packages/app";
-import JSXAddon from "storybook-addon-jsx";
-setAddon(JSXAddon);
+import { storiesOf } from "@storybook/react";
+import App from "../packages/app";
 
 const theme = {};
 
 storiesOf("App", module)
-  .addWithJSX("hash router", () => (
+  .add("hash router", () => (
     <App router="hash" theme={theme}>
       <p>This is an app.</p>
     </App>
   ))
-  .addWithJSX("memory router", () => (
+  .add("memory router", () => (
     <App router="memory" theme={theme}>
       <p>This is an app.</p>
     </App>

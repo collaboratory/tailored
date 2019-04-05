@@ -1,12 +1,6 @@
 {
-  "lerna": "2.10.1",
   "packages": [
-    "packages/*",
-    "../emitterware/packages/emitter",
-    "../emitterware/packages/middleware",
-    "../emitterware/packages/emitterware",
-    "../emitterware/packages/map-factory"
+    "packages/*"
   ],
-  "npmClient": "yarn",
   "version": "0.0.0"
 }

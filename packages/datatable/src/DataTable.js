@@ -200,7 +200,6 @@ export class DataTableComponent extends Component {
               fullHeight={this.state.loading}
               cellPadding={8}
               cellSpacing={0}
-              border={1}
               width="100%"
             >
               <THead>

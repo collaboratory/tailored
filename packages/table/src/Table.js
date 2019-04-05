@@ -7,6 +7,8 @@ const Table = styled.table`
   margin: 0;
   padding: 0;
   word-break: break-word;
-  ${overrides()};
+  ${overrides({
+    borderColor: "disabled-d-1"
+  })};
 `;
 export default Table;

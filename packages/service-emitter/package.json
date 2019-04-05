@@ -11,17 +11,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "babel": {
-    "presets": [
-      "env"
-    ],
-    "plugins": [
-      "transform-class-properties",
-      "transform-object-rest-spread",
-      "transform-export-extensions",
-      "transform-runtime"
-    ]
-  },
   "scripts": {
     "build": "babel -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
     "watch": "babel --watch -d dist/ -D --compact --minified src/ --ignore '**/*.test.js,**/__tests__'",
@@ -31,7 +20,7 @@
     "build-clean": "npm run lint-fix && npm run clean && npm run build"
   },
   "dependencies": {
-    "@emitterware/map-factory": "^0.0.0",
-    "@emitterware/emitter": "^0.0.0"
+    "@emitterware/map-factory": "^0.0.4",
+    "@emitterware/emitter": "^0.0.1"
   }
 }

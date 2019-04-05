@@ -38,7 +38,7 @@ export default class Select extends Component {
     }
   }
 
-  componentWillReceiveProps({ label, value, ...next }) {
+  componentDidReceiveProps({ label, value, ...next }) {
     if (label || value) {
       this.setState({
         label,
@@ -73,12 +73,15 @@ export default class Select extends Component {
 
   setValue = value => {
     const label = this.getLabel(value);
-    this.setState({
-      value,
-      label
-    }, () => {
-      this.props.onChange({ value, label });
-    });
+    this.setState(
+      {
+        value,
+        label
+      },
+      () => {
+        this.props.onChange({ value, label });
+      }
+    );
   };
 
   renderOptions = () => {
@@ -147,11 +150,7 @@ export default class Select extends Component {
             name={`select.${name}`}
             value={this.state.value}
           />
-          <SelectContainer
-            value={value}
-            toggled={toggled}
-            {...next}
-          >
+          <SelectContainer value={value} toggled={toggled} {...next}>
             <SelectLabel>{this.getLabel()}</SelectLabel>
             {this.renderOptions()}
           </SelectContainer>

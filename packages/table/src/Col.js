@@ -13,6 +13,8 @@ const Col = styled.td`
   &:last-child {
     word-wrap: break-word;
   }
-  ${overrides()};
+  ${overrides({
+    borderColor: "disabled"
+  })};
 `;
 export default Col;
