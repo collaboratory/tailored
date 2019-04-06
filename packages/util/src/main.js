@@ -165,6 +165,7 @@ export const overrides = (defaultProps = {}) => {
         customWidth,
         height,
         colors,
+        display,
         fontSize,
         fontWeight,
         borderRadius,

@@ -15,8 +15,6 @@ export const ButtonStyled = styled.button`
   text-transform: uppercase;
   transition: all 0.5s;
 
-  ${display};
-  ${float};
   ${hoverColors()};
   ${overrides({
     bg: "primary",
