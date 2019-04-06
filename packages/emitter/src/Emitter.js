@@ -1,29 +1,19 @@
-import React, { Component, Children } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import EmitterService from "@tailored/service-emitter";
 
-export const Emitter = ({ channel }) => {
-  const EmitterContext = React.createContext("emitter");
-  return [
-    class EmitterComponent extends Component {
-      static propTypes = {
-        channel: PropTypes.string.isRequired,
-        children: PropTypes.any
-      };
+export const emitter = ({ channel }) => {
+  const Context = React.createContext("emitter");
+  const Emitter = EmitterService.get(channel);
 
-      render() {
-        return (
-          <EmitterContext.Provider value={EmitterService.get(channel)}>
-            {Children.only(this.props.children)}
-          </EmitterContext.Provider>
-        );
-      }
-    },
-    EmitterContext
-  ];
+  return {
+    Context,
+    Emitter,
+    Provider: Context.Provider,
+    Consumer: Context.Consumer,
+    withEmitter: Wrapped => {
+      const WithEmitter = props => <Wrapped {...props} emitter={Emitter} />;
+      return WithEmitter;
+    }
+  };
 };
-export default Emitter;
-
-export const withEmitter = (channel, Wrapped) => (
-  <Wrapped emitter={EmitterService.get(channel)} />
-);
+export default emitter;

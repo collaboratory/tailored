@@ -4,6 +4,8 @@ A flexible button component.
 ## Props
 1. to - Optional Link destination
 
+Supports [@tailored/util overrides](https://github.com/collaboratory/tailored/tree/develop/packages/util#overrides)
+
 ## Usage
 ```js
 import { render } from "react-dom";

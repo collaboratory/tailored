@@ -175,6 +175,14 @@ export class DataTableComponent extends Component {
     });
   }
 
+  onFieldChange(id) {
+    return e => {
+      const filters = this.state.filters;
+      filters[id] = e.target.value;
+      this.setState({ filters });
+    };
+  }
+
   render() {
     const colCount = this.props.columns ? this.props.columns.length + 1 : 1;
 
@@ -188,7 +196,10 @@ export class DataTableComponent extends Component {
                   this.props.filters.map((filter, i) => {
                     return (
                       <Box key={uniqid()} p={1}>
-                        {filter(this)}
+                        <filter.component
+                          name={`filter.${filter.id}`}
+                          onChange={this.onFieldChange(filter.id)}
+                        />
                       </Box>
                     );
                   })}
