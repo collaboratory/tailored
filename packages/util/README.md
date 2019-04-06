@@ -4,28 +4,36 @@ Utilities style helpers for tailored and styled-components. Leverages and extend
 ## API
 @tailored/util exposes the following methods:
 
-1. convertColor
+### convertColor
     * Convert an array of color/gradient strings to theme colors
     * Params:
         * {array} colors        An array of color/gradient strings
         * {object} themeColors  Theme colors config 
-2. convertColors
+
+### convertColors
     * Convert a color/gradient string to a theme color
         * {string} entry        Color string to convert
         * {object} themeColors  Theme colors config
-3. float
+
+### float
     * styled-components support for the `float` css property
-4. display
+
+### display
     * styled-components support for the `display` property
-5. colors
+
+### colors
     * styled-components support for the `color` and `background` css properties
-6. hoverColors
+
+### hoverColors
     * styled-components support for hover color modification
-7. customWidth
+
+### customWidth
     * styled-components support for the `fullWidth` prop and `width` css property
-8. verticalAlign
+
+### verticalAlign
     * styled-components support for the `verticalAlign` css property
-9. overrides
+
+### overrides
     * standard styled-components css property support
     * Properties supported:
         1. space
